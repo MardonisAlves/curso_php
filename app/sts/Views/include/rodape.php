@@ -1,5 +1,11 @@
 
-    <script src="assets/js/jquery-3.2.1.slim.min.js"></script>
+		
+		<footer class="footer bg-danger">
+			<div class="container text-center">
+				© copyright celke.com.br
+			</div>
+		</footer>
+		<script src="assets/js/jquery-3.2.1.slim.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 		<script src="assets/js/bootstrap.min.js"></script>
 		<script src="assets/js/scrollreveal.min.js"></script>

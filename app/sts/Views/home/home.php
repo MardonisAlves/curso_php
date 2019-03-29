@@ -99,7 +99,53 @@ if (!defined('URL')) {
 						</div>
 					</div>
 				</div>
-			</div>		
+			</div>	
+			
+			<?php extract( $this->Dados['sts_videos'] [0]);?>
+
+			<div class="jumbotron video">
+				<div class="container">
+					<h2 class="display-4 text-center video-titulo" style="margin-bottom: 40px;"><?php echo $titulo;?></h2>
+					<p class="lead text-center video-parag"><?php echo $descricao;?></p>
+					<div class="row justify-content-md-center video-cont">
+   
+						<div class="col-12 col-md-8">
+							<div class="embed-responsive embed-responsive-16by9">
+								<iframe class="embed-responsive-item" src="<?php echo $video;?>" allowfullscreen></iframe>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			
+
+			<div class="jumbotron blog-home">
+				<div class="container">
+					<h2 class="display-4 text-center" style="margin-bottom: 40px;">Ultimos artigos</h2>
+					<div class="card-deck blog-text">
+						<?php foreach ($this->Dados['sts_artigos'] as $artigo):
+								extract($artigo);
+						?>
+						<div class="card art-um">
+							<a href="artigo.html">
+								<img class="card-img-top" src="<?php echo URL .'/assets/imagens/artigo/'.$id.'/'.$imagem;?>" alt="Titulo do artigo">
+							</a>
+							<div class="card-body">
+								<a href="artigo.html">
+									<h5 class="card-title text-center text-danger"><?php echo $titulo ;?></h5>
+								</a>
+								<p class="card-text"><?php echo $descricao ;?></p>
+								<p class="text-center"><a href="#" class="btn btn-danger">Mais Detalhes</a></p>
+							</div>
+						</div>
+						<?php
+						endforeach;
+						?>
+					</div>
+				</div>
+			</div>	
+			
             </div>
 </main>
 
