@@ -34,7 +34,7 @@ class StsRead extends StsConn
             parse_str($ParseString, $this->Values);
         }
         $this->Select = "SELECT * FROM {$Tabela} {$Termos}";
-        echo "{$this->Select}";
+       // echo "{$this->Select}";
         $this->exeInstrucao();
     }
 
