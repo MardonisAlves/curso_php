@@ -11,7 +11,7 @@
 								<a class="nav-link" href="index.html">Home </a>
 							</li>
 							<li class="nav-item menu">
-								<a class="nav-link" href="sobre_empresa.html">Sobre a Empresa</a>
+								<a class="nav-link" href="sobre-empresa">Sobre a Empresa</a>
 							</li>
 							<li class="nav-item menu">
 								<a class="nav-link" href="blog.html">Blog </a>

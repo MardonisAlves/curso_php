@@ -14,10 +14,18 @@ if (!defined('URL')) {
  */
 class SobreEmpresa
 {
-
+    private $Dados ;
     public function index()
     {
-        echo "Página Sobre Empresa <br>";
+        //echo "Parei nesta Página Sobre Empresa <br>";
+
+        $sobreempresa = new \Sts\Models\StsSobEmp();
+        $this->Dados['sob_empresa'] = $sobreempresa->listarSobEmp();
+
+        $carregarview = new \Core\ConfigView("sts/Views/sobEmp/sobEmp" , $this->Dados);
+        $carregarview->renderizar();
+
+
     }
 
 }

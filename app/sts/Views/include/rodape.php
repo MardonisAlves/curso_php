@@ -57,6 +57,16 @@
 				origin: 'bottom',
 				distance: '20px'
 			});
+			sr.reveal('.sobre-emp-text', {
+				duration: 1000,
+				origin: 'left',
+				distance: '20px'
+			});
+			sr.reveal('.sobre-emp-img', {
+				duration: 1000,
+				origin: 'right',
+				distance: '20px'
+			});
 		</script>
     </body>
 </html>
