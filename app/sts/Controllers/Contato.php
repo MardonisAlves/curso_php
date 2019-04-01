@@ -14,10 +14,16 @@ if (!defined('URL')) {
  */
 class Contato
 {
+    private $Dados;
 
     public function index()
     {
-        echo "Página Contato <br>";
+        $this->Dados = ['nome' => 'Mardonis' , 'email' => 'mardonisgp@gmail.com', 'assunto' => 'teste4',
+        'mensagem' => 'sms teste', 'created' => date('y-m-d H:i:s')];
+        var_dump($this->Dados);
+        $contato = new \Sts\Models\StsContato();
+        $this->Dados= $contato->cadContato($this->Dados);
+
     }
 
 }
