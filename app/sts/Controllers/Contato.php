@@ -18,11 +18,19 @@ class Contato
 
     public function index()
     {
-        $this->Dados = ['nome' => 'Mardonis' , 'email' => 'mardonisgp@gmail.com', 'assunto' => 'teste4',
-        'mensagem' => 'sms teste', 'created' => date('y-m-d H:i:s')];
-        var_dump($this->Dados);
+        $this->Dados = filter_input_array(INPUT_POST , FILTER_DEFAULT);
+
+        //var_dump($this->Dados);
+        
+        if(!empty($this->Dados['CadMsgCont'])):
+        unset($this->Dados['CadMsgCont']);
         $contato = new \Sts\Models\StsContato();
         $this->Dados= $contato->cadContato($this->Dados);
+
+        endif;
+
+        $carregarview = new  \Core\ConfigView('sts/Views/contato/contato', $this->Dados);
+        $carregarview->renderizar();
 
     }
 
