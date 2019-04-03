@@ -8,16 +8,16 @@
 					<div class="collapse navbar-collapse" id="navbarCollapse">
 						<ul class="navbar-nav mr-auto">
 							<li class="nav-item menu">
-								<a class="nav-link" href="<?php echo URL . '/home';?>">Home </a>
+								<a class="nav-link" href="<?php echo URL . 'home';?>">Home </a>
 							</li>
 							<li class="nav-item menu">
-								<a class="nav-link" href="<?php echo URL . '/sobre-empresa';?>">Sobre a Empresa</a>
+								<a class="nav-link" href="<?php echo URL . 'sobre-empresa';?>">Sobre a Empresa</a>
 							</li>
 							<li class="nav-item menu">
-								<a class="nav-link" href="<?php echo URL . '/blog';?>">Blog </a>
+								<a class="nav-link" href="<?php echo URL . 'blog';?>">Blog </a>
 							</li>
 							<li class="nav-item menu">
-								<a class="nav-link" href="<?php echo URL . '/contato';?>">Contato</a>
+								<a class="nav-link" href="<?php echo URL . 'contato';?>">Contato</a>
 							</li>
 						</ul>
 					</div>

@@ -18,7 +18,7 @@ class StsBlog
     private $Resultado;
     private $PageId;
     private $ResultadoPg;
-    private $LimiteResultado = 2;
+    private $LimiteResultado = 4;
 
     function getResultadoPg()
     {

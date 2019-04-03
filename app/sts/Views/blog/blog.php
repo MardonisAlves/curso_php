@@ -20,14 +20,14 @@ if (!defined('URL')) {
                         ?>
                         <div class="row featurette">
                             <div class="col-md-7 order-md-2 blog-text anim_right">
-                                <a href="<?php echo URL . 'artigo/' . $slug; ?>">
+                                <a href="<?php echo URL . '/artigo/' . $slug; ?>">
                                     <h2 class="featurette-heading text-danger"><?php echo $titulo; ?></h2>
                                 </a>
                                 <p class="lead"><?php echo $descricao; ?> <a href="<?php echo URL . 'artigo/' . $slug; ?>" class="text-danger">Continuar lendo</a></p>
                             </div>
                             <div class="col-md-5 order-md-1 anim_left">
                                 <a href="<?php echo URL . 'artigo/' . $slug; ?>">
-                                    <img class="featurette-image img-fluid mx-auto" src="<?php echo URL . 'assets/imagens/artigo/' . $id . '/' . $imagem; ?>" alt="<?php echo $titulo; ?>">
+                                    <img class="featurette-image img-fluid mx-auto" src="<?php echo URL . '/assets/imagens/artigo/' . $id . '/' . $imagem; ?>" alt="<?php echo $titulo; ?>">
                                 </a>
                             </div>
                         </div>
@@ -35,7 +35,7 @@ if (!defined('URL')) {
                         <?php
                     }
 
-                    echo $this->Dados['paginacao'];
+                    var_dump($this->Dados['paginacao']);
                     ?>
                 </div>
                 <aside class="col-md-4 blog-sidebar">
