@@ -15,6 +15,8 @@ class ConfigController
     private $UrlController;
     private $UrlParametro;
     private static $Format;
+    private $classe;
+    private $paginas;
 
     public function __construct()
     {
@@ -26,7 +28,7 @@ class ConfigController
             if (isset($this->UrlConjunto[0])) {
                 $this->UrlController = $this->slugController($this->UrlConjunto[0]);
             } else {
-                $this->UrlController = CONTROLER;
+                $this->UrlController = $this->slugController(CONTROLER);
             }
 
             if (isset($this->UrlConjunto[1])) {
@@ -37,7 +39,7 @@ class ConfigController
             //echo "URL: {$this->Url} <br>";
             //echo "Controlle: {$this->UrlController} <br>";
         } else {
-            $this->UrlController = CONTROLER;
+            $this->UrlController = $this->slugController(CONTROLER);
             $this->UrlParametro = null;
         }
     }
@@ -70,9 +72,48 @@ class ConfigController
     
     public function carregar()
     {
-        $classe = "\\Sts\\Controllers\\" . $this->UrlController;
-        $classeCarregar = new $classe;
-        $classeCarregar->index();
+        $listarPg = new \Sts\Models\StsPaginas();
+        $this->paginas = $listarPg->listarPaginas($this->UrlController); 
+        if($this->paginas):
+            extract($this->paginas[0]);
+                $this->classe = "\\App\\{$tipo_tpg}\\Controllers\\" . $this->UrlController;
+                
+
+                if(class_exists($this->classe)):
+                
+
+                    $this->carregarmetodo();
+
+                else:
+                    $this->UrlController = $this->slugController(CONTROLER);
+
+                endif;
+        else:
+            $this->UrlController = $this->slugController(CONTROLER);
+            $this->carregar();
+        endif;
+
+                
+       
+    }
+
+    public function carregarmetodo()
+    {
+        $classeCarregar = new $this->classe;
+        if(method_exists($classeCarregar , 'index')):
+
+            if($this->UrlParametro !== null):
+                $classeCarregar->index($this->UrlParametro);
+            else:
+                $classeCarregar->index();
+            endif;
+
+        
+    else:
+
+        $this->UrlController = $this->slugController(CONTROLER);
+        $this->carregar();
+    endif;
     }
 
 }

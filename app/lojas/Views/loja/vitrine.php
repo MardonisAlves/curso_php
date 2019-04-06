@@ -8,7 +8,7 @@ if (!defined('URL')) {
 
     <div class="jumbotron blog">
         <div class="container">
-            <h2 class="display-4 text-center" style="margin-bottom: 40px;">Blog</h2>
+            <h2 class="display-4 text-center" style="margin-bottom: 40px;">Vitrine</h2>
             <div class="row">
                 <div class="col-md-8 blog-main">
                     <?php
@@ -27,7 +27,7 @@ if (!defined('URL')) {
                             </div>
                             <div class="col-md-5 order-md-1 anim_left">
                                 <a href="<?php echo URL . 'artigo/' . $slug; ?>">
-                                    <img class="featurette-image img-fluid mx-auto" src="<?php echo URL . '/assets/imagens/artigo/' . $id . '/' . $imagem; ?>" alt="<?php echo $titulo; ?>">
+                                    <img class="featurette-image img-fluid mx-auto" src="<?php echo URL . 'assets/imagens/artigo/' . $id . '/' . $imagem; ?>" alt="<?php echo $titulo; ?>">
                                 </a>
                             </div>
                         </div>
@@ -35,7 +35,7 @@ if (!defined('URL')) {
                         <?php
                     }
 
-                    var_dump($this->Dados['paginacao']);
+                    echo $this->Dados['paginacao'];
                     ?>
                 </div>
                 <aside class="col-md-4 blog-sidebar">
