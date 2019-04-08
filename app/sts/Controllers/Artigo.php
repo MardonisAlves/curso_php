@@ -15,7 +15,14 @@ class Artigo
    public function index($Artigo = null)
    {
     
-    
+     // MENUR
+     $menu = new \Sts\Models\StsMenu();
+     $this->Dados['menu'] =  $menu->listarMenu();
+
+      //SEO
+      $seo = new \Sts\Models\StsSeo();
+      $this->Dados['seo']= $seo->listarSeo();
+     
     $pageId = filter_input(INPUT_GET ,"pg" , FILTER_SANITIZE_NUMBER_INT);
     $this->pageId = $this->pageId ? $this->pageId : 1;
 

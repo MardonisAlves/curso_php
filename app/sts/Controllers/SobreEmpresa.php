@@ -17,6 +17,13 @@ class SobreEmpresa
     private $Dados ;
     public function index()
     {
+         // MENUR
+         $menu = new \Sts\Models\StsMenu();
+         $this->Dados['menu'] =  $menu->listarMenu();
+         
+          //SEO
+          $seo = new \Sts\Models\StsSeo();
+          $this->Dados['seo']= $seo->listarSeo();
         //echo "Parei nesta Página Sobre Empresa <br>";
 
         $sobreempresa = new \Sts\Models\StsSobEmp();

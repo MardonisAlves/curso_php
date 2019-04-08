@@ -18,6 +18,8 @@ class Contato
 
     public function index()
     {
+         
+
         $this->Dados = filter_input_array(INPUT_POST , FILTER_DEFAULT);
 
         //var_dump($this->Dados);
@@ -29,6 +31,13 @@ class Contato
 
         endif;
 
+        // MENUR
+        $menu = new \Sts\Models\StsMenu();
+        $this->Dados['menu'] =  $menu->listarMenu();
+         //SEO
+         $seo = new \Sts\Models\StsSeo();
+         $this->Dados['seo']= $seo->listarSeo();
+                 
         $carregarview = new  \Core\ConfigView('sts/Views/contato/contato', $this->Dados);
         $carregarview->renderizar();
 
